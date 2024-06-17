@@ -1,0 +1,78 @@
+.list-bar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+
+.p-field {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.assigned-users-container {
+  margin-top: 20px;
+}
+
+.assigned-users-container .p-field {
+  display: flex;
+  align-items: center;
+}
+
+.p-error {
+  color: red;
+  font-size: 12px;
+}
+
+.p-button-danger {
+  margin-left: 10px;
+  max-height: 20px;
+  max-width: 20px;
+  margin-right: 20px;
+}
+
+.p-button {
+  margin-top: 10px;
+}
+
+.itemList {
+  margin-top: 20px;
+}
+
+.assigned-user-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.assigned-user-field .p-col {
+  flex: 1;
+}
+
+.assigned-user-field .p-col-fixed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  margin-bottom: 20px;
+}
+
+.p-listbox-item {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.p-overlaypanel-content {
+  padding: 10px;
+}
+
+label {
+  margin-right: 20px;
+}
+
+.assignedUsers {
+  flex-direction: column;
+}

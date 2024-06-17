@@ -1,0 +1,47 @@
+<div class="main">
+  <h3>
+    Name: {{ data?.name }}; ID: {{ data?.id }}; Status:
+    {{ data?.isActive ? "Active" : "Inactive" }}; Date:
+    {{ data?.dueDate | date : "MM/dd/yyyy" }}
+  </h3>
+  <div>
+    <button
+      pButton
+      type="button"
+      label="Assigned Users"
+      icon="pi pi-users"
+      (click)="overlayPanel.toggle($event)"
+      class="p-button-text p-button-info"
+    ></button>
+    <p-overlayPanel #overlayPanel>
+      <div *ngIf="data?.assignedUsers?.length">
+        <ul>
+          <li *ngFor="let user of data?.assignedUsers">{{ user }}</li>
+        </ul>
+      </div>
+      <div *ngIf="!data?.assignedUsers?.length">
+        <p>No assigned users</p>
+      </div>
+    </p-overlayPanel>
+  </div>
+
+  <button
+    pButton
+    type="button"
+    label="{{ data?.isActive ? 'Inactivate' : 'Activate' }}"
+    (click)="changeActiveStatus()"
+    [ngClass]="{
+      'p-button-success': data?.isActive,
+      'p-button-warning': !data?.isActive
+    }"
+  ></button>
+
+  <div class="p-listbox-item">
+    <button
+      pButton
+      icon="pi pi-trash"
+      class="p-button-rounded p-button-danger"
+      (click)="deleteItem()"
+    ></button>
+  </div>
+</div>

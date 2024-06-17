@@ -1,0 +1,79 @@
+<div class="list-bar-container">
+  <form [formGroup]="listForm">
+    <p-panel>
+      <div class="p-fluid p-formgrid p-grid">
+        <div class="p-field p-col">
+          <label for="name">Item Name</label>
+          <input
+            id="name"
+            type="text"
+            pInputText
+            formControlName="name"
+            placeholder="Enter item name"
+          />
+        </div>
+
+        <div class="p-field p-col">
+          <label for="dueDate">Due Date</label>
+          <p-calendar
+            id="dueDate"
+            formControlName="dueDate"
+            placeholder="Choose a due date"
+          ></p-calendar>
+        </div>
+
+        <div class="p-field p-col">
+          <label for="assignedUsers">Assigned Users</label>
+          <div formArrayName="assignedUsers">
+            <div
+              *ngFor="let userControl of assignedUsers.controls; let i = index"
+              class="p-inputgroup"
+            >
+              <input
+                id="assignedUsers"
+                type="text"
+                pInputText
+                [formControlName]="i"
+                placeholder="Enter user name"
+              />
+              <button
+                pButton
+                icon="pi pi-minus"
+                class="p-button-danger p-button-rounded"
+                *ngIf="assignedUsers.length > 1"
+                (click)="removeUserField(i)"
+              ></button>
+            </div>
+          </div>
+          <button
+            pButton
+            icon="pi pi-plus"
+            class="p-button-text"
+            (click)="addUserField()"
+          >
+            Add User
+          </button>
+        </div>
+      </div>
+    </p-panel>
+
+    <button
+      pButton
+      type="submit"
+      label="Add Item"
+      icon="pi pi-check"
+      class="p-mt-2"
+      (click)="createListItem()"
+      [disabled]="listForm.invalid"
+    ></button>
+  </form>
+</div>
+
+<div class="itemList">
+  @for (item of list; track item.id) {
+  <app-list-item
+    [data]="item"
+    (delete)="deleteListItem($event)"
+  ></app-list-item>
+  }
+</div>

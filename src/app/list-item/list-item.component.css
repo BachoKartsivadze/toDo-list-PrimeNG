@@ -1,0 +1,16 @@
+.main {
+  margin-bottom: 20px;
+}
+
+.p-listbox-item {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.p-button-danger {
+  margin-left: 10px;
+}
+
+.p-overlaypanel-content {
+  padding: 10px;
+}
