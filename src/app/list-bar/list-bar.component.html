@@ -70,10 +70,8 @@
 </div>
 
 <div class="itemList">
-  @for (item of list; track item.id) {
-  <app-list-item
-    [data]="item"
+  <app-list-table
+    [list]="list"
     (delete)="deleteListItem($event)"
-  ></app-list-item>
-  }
+  ></app-list-table>
 </div>

@@ -1,0 +1,39 @@
+<p-table [value]="list">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Name</th>
+      <th>ID</th>
+      <th>Status</th>
+      <th>Due Date</th>
+      <th>Assigned Users</th>
+      <th>Actions</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-item>
+    <tr>
+      <td>{{ item.name }}</td>
+      <td>{{ item.id }}</td>
+      <td>{{ item.isActive ? "Active" : "Inactive" }}</td>
+      <td>{{ item.dueDate | date : "MM/dd/yyyy" }}</td>
+      <td>
+        <ul>
+          <li *ngFor="let user of item.assignedUsers">{{ user }}</li>
+        </ul>
+      </td>
+      <td>
+        <button
+          pButton
+          icon="pi pi-pencil"
+          class="p-button-rounded p-button-success p-mr-2"
+          (click)="editItem(item)"
+        ></button>
+        <button
+          pButton
+          icon="pi pi-trash"
+          class="p-button-rounded p-button-danger"
+          (click)="deleteListItem(item.id)"
+        ></button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

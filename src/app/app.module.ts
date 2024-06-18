@@ -17,10 +17,16 @@ import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { MenubarModule } from 'primeng/menubar';
 import { MenuModule } from 'primeng/menu';
 import { TooltipModule } from 'primeng/tooltip';
-
+import { TableModule } from 'primeng/table';
 import { PanelModule } from 'primeng/panel';
+import { ListTableComponent } from './list-table/list-table.component';
 @NgModule({
-  declarations: [AppComponent, ListBarComponent, ListItemComponent],
+  declarations: [
+    AppComponent,
+    ListBarComponent,
+    ListItemComponent,
+    ListTableComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -34,6 +40,7 @@ import { PanelModule } from 'primeng/panel';
     MenuModule,
     TooltipModule,
     PanelModule,
+    TableModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
