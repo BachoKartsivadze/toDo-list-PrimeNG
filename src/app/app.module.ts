@@ -20,6 +20,7 @@ import { TooltipModule } from 'primeng/tooltip';
 import { TableModule } from 'primeng/table';
 import { PanelModule } from 'primeng/panel';
 import { ListTableComponent } from './list-table/list-table.component';
+
 @NgModule({
   declarations: [
     AppComponent,
